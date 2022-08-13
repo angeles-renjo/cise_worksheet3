@@ -7,11 +7,11 @@ const BookSchema = new mongoose.Schema({
   },
   isbn: {
     type: String,
-    required: true
+    // required: true
   },
   author: {
     type: String,
-    required: true
+    // required: true
   },
   description: {
     type: String
