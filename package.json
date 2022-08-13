@@ -8,7 +8,7 @@
     "app": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "install-my-app": "cd my-app && npm install",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install-my-app && npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install my-app && npm run build"
   },
   "repository": {
     "type": "git",
