@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import './components/ShowBookDetails'
-import './components/ShowBookList'
-
 
 import CreateBook from './components/CreateBook';
 import ShowBookList from './components/ShowBookList';
@@ -13,14 +10,14 @@ import UpdateBookInfo from './components/UpdateBookInfo';
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/"  element = {<ShowBookList />} />
-          <Route exact path="/create-book"  element = {<CreateBook />} />
-          <Route exact path="/edit-book/:id"  element = {<UpdateBookInfo />} />
-          <Route exact path="/show-book/:id"  element = {<ShowBookDetails />} />
-      </Routes >
-      </BrowserRouter>
+      <Router>
+        <div>
+          <Route exact path='/' component={ShowBookList} />
+          <Route path='/create-book' component={CreateBook} />
+          <Route path='/edit-book/:id' component={UpdateBookInfo} />
+          <Route path='/show-book/:id' component={ShowBookDetails} />
+        </div>
+      </Router>
     );
   }
 }
