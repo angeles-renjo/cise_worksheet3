@@ -32,7 +32,6 @@ if (process.env.NODE_ENV === "production") {
 } else {
   app.get("/", (req, res) => {
     res.send("Api is run");
-    console.log(process.env.NODE_ENV);
   });
 }
 const port = process.env.PORT || 8082;
