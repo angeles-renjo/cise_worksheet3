@@ -17,16 +17,17 @@ app.use(cors({ origin: true, credentials: true }));
 
 // Init Middleware
 app.use(express.json({ extended: false }));
-
 // use Routes
 app.use("/api/books", books);
 
-if (process.env.NODE_ENV === "production") {
+const environment = process.env.NODE_ENV;
+
+if (environment === "production") {
   app.use(express.static(path.join(__dirname, "/my-app/build")));
 
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "my-app", "build", "index.html"));
-    console.log(process.env.NODE_ENV);
+    console.log(environment);
 
   });
 } else {
