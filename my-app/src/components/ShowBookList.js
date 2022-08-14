@@ -11,7 +11,7 @@ class ShowBookList extends Component {
       books: []
     };
   }
-
+  
   componentDidMount() {
     axios
       .get('http://localhost:8082/api/books')
@@ -29,6 +29,7 @@ class ShowBookList extends Component {
   render() {
     const books = this.state.books;
     console.log("PrintBook: " + books);
+
     let bookList;
 
     if(!books) {
@@ -47,6 +48,7 @@ class ShowBookList extends Component {
               <br />
               <h2 className="display-4 text-center">Books List</h2>
             </div>
+                          
 
             <div className="col-md-11">
               <Link to="/create-book" className="btn btn-outline-warning float-right">

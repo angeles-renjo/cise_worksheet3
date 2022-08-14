@@ -26,12 +26,14 @@ if (process.env.NODE_ENV === "production") {
 
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "my-app", "build", "index.html"));
+    console.log(process.env.NODE_ENV);
+
   });
 } else {
   app.get("/", (req, res) => {
     res.send("Api is run");
+    console.log(process.env.NODE_ENV);
   });
-  console.log(process.env.NODE_ENV);
 }
 const port = process.env.PORT || 8082;
 

@@ -126,7 +126,7 @@ class showBookDetails extends Component {
             {/* <br />
             <button type="button" class="btn btn-outline-info btn-lg btn-block">Edit Book</button>
             <button type="button" class="btn btn-outline-danger btn-lg btn-block">Delete Book</button> */}
-
+        
         </div>
       </div>
     );

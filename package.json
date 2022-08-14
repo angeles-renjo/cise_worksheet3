@@ -6,10 +6,9 @@
   "scripts": {
     "build": "cd my-app && npm run build",
     "install-my-app": "cd my-app && npm install",
-    "heroku-postbuild": "npm run install-my-app && npm run build",
-    "server": "node app.js",
-    "develop": "concurrently --kill-others-on-fail \"npm run app\" \"npm run start --prefix my-app\"",
-    "start": "set NODE_ENV=production && concurrently --kill-others-on-fail \"npm run app\" \"npm run start --prefix my-app\""
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-my-app && npm run build",
+    "app": "node app.js",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
