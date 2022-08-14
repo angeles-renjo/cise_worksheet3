@@ -20,14 +20,14 @@ app.use(express.json({ extended: false }));
 // use Routes
 app.use("/api/books", books);
 
-const environment = process.env.NODE_ENV;
 
-if (environment === "production") {
+
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/my-app/build")));
 
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "my-app", "build", "index.html"));
-    console.log(environment);
+    console.log(process.env.NODE_ENV);
 
   });
 } else {
